@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch的使用</title>
+</head>
+<body>
+    <!-- Fetch()的基本语法 
+            let promise = fetch(url,[options])
+            url——>要访问的URL
+            options——>可选参数:method,header等
+    -->
+    <script>
+        // 初级
+        // 默认返回一个promise,必须.then()
+        // fetch('https://elm.cangdu.org/v3/profile/explain').then((rs) =>{
+        //     console.log(rs.json())
+        // })
+
+
+        // 中级
+        // let promise = fetch('https://elm.cangdu.org/v3/profile/explain');
+        // promise.then((rs) => {
+        //     console.log(rs.text())
+        // })
+
+
+        //高级
+        //匿名函数自调用
+        ;(async function(){
+            //console.log('abc')
+            let ps = await fetch('https://elm.cangdu.org/v3/profile/explain')
+            console.log(ps.json())
+        })();
+
+
+        //特级----项目种体验
+    </script>
+</body>
+</html>
